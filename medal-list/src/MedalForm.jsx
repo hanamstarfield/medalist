@@ -18,6 +18,7 @@ function MedalForm({ medalList, setMedalList }) {
   }
 
   const isExist = medalList.some((entry) => entry.country === country);
+
   const handleAddCountry = () => {
     if (country.trim() === "") {
       alert("국가 이름을 입력해주세요!");
@@ -37,7 +38,7 @@ function MedalForm({ medalList, setMedalList }) {
       alert("리스트에 없는 나라입니다!");
       return;
     }
-
+    
     updateMedals({ country, gold, silver, bronze });
     resetInputs();
   };
@@ -62,21 +63,21 @@ function MedalForm({ medalList, setMedalList }) {
       <input
         type="number"
         value={gold}
-        onChange={(e) => setGold(e.target.value)}
+        onChange={(e) => setGold(+e.target.value)}
         min="0"
       />
       <label>은메달:</label>
       <input
         type="number"
         value={silver}
-        onChange={(e) => setSilver(e.target.value)}
+        onChange={(e) => setSilver(+e.target.value)}
         min="0"
       />
       <label>동메달:</label>
       <input
         type="number"
         value={bronze}
-        onChange={(e) => setBronze(e.target.value)}
+        onChange={(e) => setBronze(+e.target.value)}
         min="0"
       />
       <button onClick={handleAddCountry}>국가 추가</button>
