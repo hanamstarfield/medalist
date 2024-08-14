@@ -1,7 +1,9 @@
 구조
+
 ![image](https://github.com/user-attachments/assets/edb6b786-c57f-42e3-88f1-53599af586be)
 
 기능
+
 ![image](https://github.com/user-attachments/assets/a0111a95-3691-438b-b9de-f74e6e395b82)
 
 1. 국가 추가 버튼을 통해 리스트를 만들 수 있다.
@@ -9,9 +11,12 @@
 - 각 국가는 금메달 갯수를 기준으로 내림차순으로 정렬된다.
 - 중복된 나라의 국가는 추가할 수 없다.
 
-3. 업데이트 버튼으로 리스트에 있는 국가의 메달 갯수를 변경할 수 있다. 
+2. 업데이트 버튼으로 리스트에 있는 국가의 메달 갯수를 변경할 수 있다. 
 ![image](https://github.com/user-attachments/assets/95b223c4-d2ed-433b-8093-7cf44c06543e)
 - 리스트에 국가의 이름이 없다면 업데이트 할 수 없다.
+
+3. 삭제 버튼 클릭으로 리스트 삭제 
+
 
 느낀점
 
