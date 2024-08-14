@@ -1,36 +1,44 @@
 import React, { useState } from 'react';
 
-function MedalForm({ medalList, addCountry, updateMedals }) {
+function MedalForm({ medalList, setMedalList }) {
   const [country, setCountry] = useState('');
   const [gold, setGold] = useState(0);
   const [silver, setSilver] = useState(0);
   const [bronze, setBronze] = useState(0);
 
+
+  const addCountry = (newEntry) => {
+    setMedalList([...medalList, newEntry]);
+  };
+
+  const updateMedals = (updatedEntry) => {
+    setMedalList(medalList.map((entry) => 
+      entry.country === updatedEntry.country ? updatedEntry : entry
+    ));
+  }
+
+  const isExist = medalList.some((entry) => entry.country === country);
   const handleAddCountry = () => {
     if (country.trim() === "") {
       alert("국가 이름을 입력해주세요!");
       return;
     }
-    const isExist = medalList.some((entry) => entry.country === country);
     if (isExist) {
       alert("이미 추가된 국가입니다!");
       return;
     }
 
-    const newEntry = { country, gold, silver, bronze };
-    addCountry(newEntry);
+    addCountry({ country, gold, silver, bronze });
     resetInputs();
   };
 
   const handleUpdateMedals = () => {
-    const isExist = medalList.some((entry) => entry.country === country);
     if (!isExist) {
       alert("리스트에 없는 나라입니다!");
       return;
     }
 
-    const updatedEntry = { country, gold, silver, bronze };
-    updateMedals(updatedEntry);
+    updateMedals({ country, gold, silver, bronze });
     resetInputs();
   };
 

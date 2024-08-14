@@ -1,6 +1,11 @@
 import React from 'react';
 
-function MedalTable({ medalList, deleteCountry }) {
+function MedalTable({ medalList, setMedalList }) {
+  
+  const deleteCountry = (deleteCountry) => {
+    setMedalList(medalList.filter(entry => entry.country !== deleteCountry));
+  };
+  
   // 금메달 수에 따라 내림차순으로 정렬
   const sortedMedalList = [...medalList].sort((a, b) => b.gold - a.gold);
 
